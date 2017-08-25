@@ -12,4 +12,11 @@ app.get('/auth/google',
   //and send follow up request to Google.
   //At same time, the second function of GoogleStrategy gets called.
   app.get('/auth/google/callback', passport.authenticate('google'));
+  app.get('/api/logout', (req, res) => {
+    req.logout();//take cookie containing the user id and kills it
+    res.send(req.user);
+  });
+  app.get('/api/current_user', (req, res) => {//(incoming request, response)
+    res.send(req.user);//passport attach user info to this req object
+  });
 };
