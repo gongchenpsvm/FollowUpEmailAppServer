@@ -1,5 +1,5 @@
 const passport = require('passport');
-//Export a fucntion from this file
+//Export a fucntion from this file. app refers to a express app
 module.exports = (app) => {
 //GoogleStrategy has string 'google' inside
 app.get('/auth/google',
